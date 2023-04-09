@@ -15,8 +15,14 @@ export class ComponentInputOutputComponent {
     { firstName: "Barb", lastName: "White", age: 33 },
   ];
 
+  receivedUser: User | undefined;
+
   onDeleteUser(index: number) {
     console.log(index);
     this.userData.splice(index, 1);
+  }
+
+  onReceivedUser(user: User) {
+    this.receivedUser = user;
   }
 }
