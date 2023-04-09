@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { FormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
 
@@ -20,6 +20,7 @@ import { PageNotFoundComponent } from "./page-not-found/page-not-found.component
 import { SideBarComponent } from "./side-bar/side-bar.component";
 import { ChuckNorrisComponent } from "./chuck-norris/chuck-norris.component";
 import { TemplateFormsComponent } from "./template-forms/template-forms.component";
+import { ReactiveFormsComponent } from "./reactive-forms/reactive-forms.component";
 
 const routes: Routes = [
   { path: "greeting", component: GreetingComponent },
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: "component-input", component: ComponentInputComponent },
   { path: "component-input-output", component: ComponentInputOutputComponent },
   { path: "template-forms", component: TemplateFormsComponent },
+  { path: "reactive-forms", component: ReactiveFormsComponent },
   { path: "chuck-norris-joke", component: ChuckNorrisComponent },
   { path: "", component: WelcomeComponent },
   { path: "**", component: PageNotFoundComponent },
@@ -54,10 +56,12 @@ const routes: Routes = [
     SideBarComponent,
     ChuckNorrisComponent,
     TemplateFormsComponent,
+    ReactiveFormsComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
   ],
